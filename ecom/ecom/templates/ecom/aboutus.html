@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Simple E-commerce</title>
+  <style media="screen">
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f0f0f0;
+		}
+		header {
+			background-color: #333;
+			color: #fff;
+			padding: 1rem;
+			text-align: center;
+		}
+		main {
+			padding: 2rem;
+			margin: 0;
+		}
+		h1 {
+			color: #333;
+		}
+		p {
+			line-height: 1.5;
+		}
+    .footer{
+      position: fixed;
+    }
+  </style>
+</head>
+
+<body style="background-color:#f7f7f7;">
+  {%if request.user.is_authenticated%}
+    {% include "ecom/customer_navbar.html" %}
+  {%else%}
+    {% include "ecom/navbar.html" %}
+  {%endif%}
+  <br><br><br>
+  <body>
+    <header>
+      <h1>About Us</h1>
+    </header>
+    <main>
+      <h1>Who We Are</h1>
+      <p>We are a team of passionate developers who love building beautiful and functional websites.</p>
+      <h1>Our Mission</h1>
+      <p>Our mission is to provide high-quality web development services to businesses of all sizes.</p>
+      <h1>Our Values</h1>
+      <p>We value creativity, collaboration, and a commitment to excellence in everything we do.</p>
+    </main>
+  {% include "ecom/footer.html" %}
+</body>
+
+
+</html>
